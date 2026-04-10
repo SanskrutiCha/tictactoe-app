@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing Flask"
+      - pip install flask
+
+  build:
+    commands:
+      - echo "Checking files..."
+      - ls
+      - test -f app.py
+      - test -d templates
+      - test -f templates/index.html
+
+  post_build:
+    commands:
+      - echo "Build successful"
+
+artifacts:
+  files:
+    - '**/*'
